@@ -1,0 +1,293 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  color: white;
+
+  background: 
+    linear-gradient(
+      rgba(15, 23, 42, 0.92),
+      rgba(15, 23, 42, 0.92)
+    ),
+    url('assets/images/imagemfundoilumen.png') center/cover fixed no-repeat;
+}
+
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 8%;
+  position: fixed;
+  width: 100%;
+  background: transparent;
+  transition: 0.3s;
+}
+
+header.scrolled {
+  background: #020617;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: #38bdf8;
+  transition: 0.3s;
+}
+
+.logo:hover {
+  text-shadow: 0 0 15px #38bdf8;
+  transform: scale(1.05);
+}
+
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: white;
+}
+
+nav a:hover {
+  color: #38bdf8;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #38bdf8;
+  color: black;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* SECTIONS */
+section {
+  padding: 90px 8%;
+}
+
+.titulo {
+  color: #38bdf8;
+  margin-bottom: 20px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #020617;
+  padding: 25px;
+  border-radius: 12px;
+  transition: 0.3s;
+  flex: 1;
+  min-width: 250px;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #020617;
+}
+
+/* WHATSAPP */
+.whatsapp {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #25d366;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+  animation: pulse 2s infinite;
+}
+
+.whatsapp:hover {
+  transform: rotate(10deg) scale(1.1);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+#sobre p {
+  max-width: 800px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+/* CONTATO (melhoria visual) */
+.contato-box {
+  margin-top: 20px;
+  background: rgba(2, 6, 23, 0.75);
+  border: 1px solid rgba(56, 189, 248, 0.12);
+  border-radius: 14px;
+  padding: 28px;
+  max-width: 980px;
+}
+
+.contato-texto {
+  color: rgba(255,255,255,0.85);
+  line-height: 1.7;
+  max-width: 820px;
+  margin-bottom: 18px;
+}
+
+.contato-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 18px 0 22px;
+}
+
+.contato-item {
+  background: rgba(2, 6, 23, 0.9);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.contato-label {
+  display: block;
+  font-size: 13px;
+  color: rgba(56, 189, 248, 0.9);
+  margin-bottom: 6px;
+  letter-spacing: 0.3px;
+}
+
+.contato-link, .contato-info {
+  color: rgba(255,255,255,0.92);
+  text-decoration: none;
+}
+
+.contato-link:hover {
+  color: #38bdf8;
+}
+
+.contato-acoes {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* botão secundário */
+.btn-outline {
+  background: transparent;
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.55);
+}
+
+.btn-outline:hover {
+  background: rgba(56, 189, 248, 0.12);
+  transform: scale(1.03);
+}
+
+/* responsivo */
+@media (max-width: 900px) {
+  .contato-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* SERVIÇOS MODERNOS */
+.servicos-cards {
+  align-items: stretch;
+}
+
+.servico-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 240px;
+  border: 1px solid rgba(56, 189, 248, 0.10);
+}
+
+/* brilho sutil na borda no hover */
+.servico-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: radial-gradient(circle at top left, rgba(56,189,248,0.25), transparent 45%);
+  opacity: 0;
+  transition: 0.35s;
+  pointer-events: none;
+}
+
+.servico-card:hover::before {
+  opacity: 1;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  margin-bottom: 12px;
+}
+
+.badge-2 { background: rgba(167, 139, 250, 0.15); color: #a78bfa; }
+.badge-3 { background: rgba(37, 211, 102, 0.14); color: #25d366; }
+.badge-4 { background: rgba(255, 255, 255, 0.10); color: rgba(255,255,255,0.85); }
+
+.linha {
+  height: 1px;
+  background: rgba(255,255,255,0.10);
+  margin: 14px 0;
+}
+
+.mini-lista {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+  color: rgba(255,255,255,0.85);
+  font-size: 14px;
+}
+
+.mini-lista li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mini-lista li::before {
+  content: "•";
+  color: #38bdf8;
+}
+
+
