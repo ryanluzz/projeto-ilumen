@@ -205,15 +205,12 @@ footer {
 
 /* botão secundário */
 .btn-outline {
+  
   background: transparent;
   color: #38bdf8;
   border: 1px solid rgba(56, 189, 248, 0.55);
 }
 
-.btn-outline:hover {
-  background: rgba(56, 189, 248, 0.12);
-  transform: scale(1.03);
-}
 
 /* responsivo */
 @media (max-width: 900px) {
